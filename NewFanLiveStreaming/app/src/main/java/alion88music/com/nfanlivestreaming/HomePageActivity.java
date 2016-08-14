@@ -3,6 +3,7 @@ package alion88music.com.nfanlivestreaming;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import alion88music.com.nfanlivestreaming.fragments.MainScreenFragment;
+
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -22,15 +25,6 @@ public class HomePageActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,17 +74,20 @@ public class HomePageActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_main) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,
+                    new MainScreenFragment()).commit();
+        } else if (id == R.id.nav_artist_profile) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_special_goods) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_community) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_player) {
+
+        } else if (id == R.id.nav_live) {
 
         }
 

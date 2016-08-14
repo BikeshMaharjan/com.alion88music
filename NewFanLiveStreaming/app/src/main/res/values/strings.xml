@@ -5,4 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+<!--Menu topics-->
+    <string name="main_screen">Main Screen</string>
+    <string name="artist_profile">Artist Profile</string>
+    <string name="special_and_goods">Special and Goods</string>
+    <string name="community">Community</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="player">Player</string>
+    <string name="live">Live</string>
 </resources>
